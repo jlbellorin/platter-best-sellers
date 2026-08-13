@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="bg-white">
     <svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
       <symbol id="icon-star" viewBox="0 0 11 10">
         <path
@@ -55,25 +55,39 @@
 
     <h1 class="sr-only">Outside Vibes</h1>
 
-    <section aria-labelledby="best-sellers-heading">
-      <header>
-        <h2
-          id="best-sellers-heading"
-          class="text-center font-serif text-[28px] leading-[1.26] font-bold tracking-[-0.28px] text-heading md:text-left md:text-[40px] md:leading-[1.2] md:font-black md:tracking-[-0.4px]"
-        >
-          Best Sellers
-        </h2>
-        <a href="#">
-          Shop All Best Sellers
-          <svg width="16" height="12" aria-hidden="true" focusable="false">
-            <use href="#icon-arrow-right" />
-          </svg>
-        </a>
-      </header>
+    <section
+      aria-labelledby="best-sellers-heading"
+      class="flex flex-col gap-3 bg-white px-6 py-9 md:px-32 md:pt-20 md:pb-[100px]"
+    >
+      <div class="flex flex-col gap-6 md:gap-9">
+        <header class="md:flex md:items-center md:justify-between">
+          <h2
+            id="best-sellers-heading"
+            class="text-center font-serif text-[28px] leading-[1.26] font-bold tracking-[-0.28px] text-heading md:text-left md:text-[40px] md:leading-[1.2] md:font-black md:tracking-[-0.4px]"
+          >
+            Best Sellers
+          </h2>
+          <a
+            href="#"
+            class="hidden items-center gap-2 rounded-full px-8 py-4 text-[14px] leading-[1.4] font-semibold tracking-[0.42px] text-olive md:inline-flex"
+          >
+            Shop All Best Sellers
+            <svg width="16" height="12" aria-hidden="true" focusable="false">
+              <use href="#icon-arrow-right" />
+            </svg>
+          </a>
+        </header>
 
-      <ul id="product-list">
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <product-slider class="block md:flex md:flex-col md:gap-12">
+        <ul
+          id="product-list"
+          data-slider-track
+          tabindex="0"
+          aria-label="Best sellers"
+          class="grid grid-cols-2 gap-x-[11px] gap-y-3 md:-mx-32 md:flex md:gap-6 md:overflow-x-auto md:px-32"
+        >
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-01-a.jpg" alt="White t-shirt on a hanger against a dark textured wall" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-01-b.jpg" alt="" width="800" height="800" />
@@ -83,7 +97,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Outside Vibes T-Shirt Sunshine</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -113,8 +127,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-02-a.jpg" alt="Matte forest green insulated bottle on a pale background" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-02-b.jpg" alt="" width="800" height="800" />
@@ -123,7 +137,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Hike Bottle Outside Vibes Forest Green</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -140,8 +154,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-03-a.jpg" alt="Sage green shirts hanging in a row on a clothing rail" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-03-b.jpg" alt="" width="800" height="800" />
@@ -151,7 +165,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Rest in Nature T-Shirt Charcoal</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -168,8 +182,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-04-a.jpg" alt="White trucker cap on a plain background" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-04-b.jpg" alt="" width="800" height="800" />
@@ -178,7 +192,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Outside Vibes Cap Forest Green</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -195,8 +209,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-05-a.jpg" alt="Person seen from behind wearing a grey hooded sweatshirt outdoors" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-05-b.jpg" alt="" width="800" height="800" />
@@ -206,7 +220,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Trail Days Hoodie Oatmeal</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -223,8 +237,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-06-a.jpg" alt="Natural canvas tote bag hanging against a grey wall" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-06-b.jpg" alt="" width="800" height="800" />
@@ -233,7 +247,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Wander Often Tote Natural</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -250,8 +264,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-07-a.jpg" alt="Patterned socks pegged along a washing line" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-07-b.jpg" alt="" width="800" height="800" />
@@ -261,7 +275,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Outside Vibes Socks Clay</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -278,8 +292,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-08-a.jpg" alt="Pink, yellow and black ribbed beanies arranged on the ground" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-08-b.jpg" alt="" width="800" height="800" />
@@ -288,7 +302,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Rest in Nature Beanie Moss</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -305,8 +319,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-09-a.jpg" alt="Three insulated bottles in orange, teal and lilac" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-09-b.jpg" alt="" width="800" height="800" />
@@ -316,7 +330,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Hike Bottle Trail Days Sandstone</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -333,8 +347,8 @@
           </article>
         </li>
 
-        <li>
-          <article class="flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
+        <li class="min-w-0 md:w-[355px] md:shrink-0">
+          <article class="relative flex flex-col gap-3 pb-2 md:gap-4 md:pb-4">
             <div class="relative overflow-hidden rounded-[10px]">
               <img class="block aspect-square w-full object-cover" src="assets/img/product-10-a.jpg" alt="Person outdoors wearing a blush pink hooded sweatshirt" width="800" height="800" />
               <img class="absolute inset-0 h-full w-full object-cover opacity-0" src="assets/img/product-10-b.jpg" alt="" width="800" height="800" />
@@ -343,7 +357,7 @@
             <div class="flex flex-col gap-2 px-2 md:gap-5 md:px-3">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bebas text-[16px] tracking-[0.48px] text-ink uppercase md:text-[18px] md:tracking-[0.54px]"><a href="#">Outside Vibes Crewneck Ember</a></h3>
-                <p class="flex items-center gap-1">
+                <p class="flex flex-wrap items-center gap-1">
                   <span aria-hidden="true" class="flex gap-[2px] [&>svg]:size-[9px] md:[&>svg]:size-[12px]">
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
                   <svg width="12" height="12" focusable="false"><use href="#icon-star" /></svg>
@@ -359,11 +373,34 @@
             </div>
           </article>
         </li>
-      </ul>
+        </ul>
 
-      <button type="button" id="show-more" aria-expanded="false" aria-controls="product-list">
-        Show More
-      </button>
+          <div
+            data-scrollbar
+            aria-hidden="true"
+            class="relative hidden h-[6px] cursor-pointer md:block"
+          >
+            <span class="absolute inset-x-0 top-1/2 h-[4px] -translate-y-1/2 bg-track"></span>
+            <span
+              data-scrollbar-thumb
+              class="absolute top-1/2 left-0 h-[4px] w-0 -translate-y-1/2 bg-ink transition-[height] duration-150 hover:h-[6px]"
+            ></span>
+          </div>
+        </product-slider>
+      </div>
+
+      <show-more data-visible="4" data-more-label="Show More" data-less-label="Show Less" class="block md:hidden">
+        <button
+          type="button"
+          aria-expanded="false"
+          aria-controls="product-list"
+          class="w-full rounded-full bg-ink px-6 py-4 text-[16px] font-semibold tracking-[0.48px] text-cream"
+        >
+          Show More
+        </button>
+      </show-more>
     </section>
+
+    <script src="js/main.js" defer></script>
   </body>
 </html>
