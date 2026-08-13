@@ -1,7 +1,7 @@
 const DESKTOP = '(min-width: 48rem)';
 const MIN_THUMB_WIDTH = 40;
 const DRAG_THRESHOLD = 4;
-const DRAGGING_CLASS = 'is-dragging';
+const DRAGGING_CLASSES = ['select-none', 'cursor-grabbing'];
 const ENHANCED_CLASS = 'js-enhanced';
 
 if (!customElements.get('product-slider')) {
@@ -83,7 +83,7 @@ if (!customElements.get('product-slider')) {
       event.preventDefault();
       this.thumbFrom = { x: event.clientX, left: parseFloat(this.thumb.style.left) || 0 };
       this.thumb.setPointerCapture(event.pointerId);
-      document.body.classList.add(DRAGGING_CLASS);
+      document.body.classList.add(...DRAGGING_CLASSES);
     }
 
     onThumbMove(event) {
@@ -95,7 +95,7 @@ if (!customElements.get('product-slider')) {
       if (!this.thumbFrom) return;
       this.thumbFrom = null;
       if (this.thumb.hasPointerCapture(event.pointerId)) this.thumb.releasePointerCapture(event.pointerId);
-      document.body.classList.remove(DRAGGING_CLASS);
+      document.body.classList.remove(...DRAGGING_CLASSES);
     }
 
     onTrackDown(event) {
@@ -116,7 +116,7 @@ if (!customElements.get('product-slider')) {
       if (!this.dragged) {
         this.dragged = true;
         this.list.setPointerCapture(event.pointerId);
-        document.body.classList.add(DRAGGING_CLASS);
+        document.body.classList.add(...DRAGGING_CLASSES);
       }
       this.list.scrollLeft = this.slideFrom.scroll - dx;
       this.sync();
@@ -126,7 +126,7 @@ if (!customElements.get('product-slider')) {
       if (!this.slideFrom) return;
       this.slideFrom = null;
       if (this.list.hasPointerCapture(event.pointerId)) this.list.releasePointerCapture(event.pointerId);
-      document.body.classList.remove(DRAGGING_CLASS);
+      document.body.classList.remove(...DRAGGING_CLASSES);
 
       if (this.dragged) {
         const swallow = (click) => {
