@@ -67,7 +67,11 @@ if (!customElements.get('product-slider')) {
       const progress = this.maxScroll > 0 ? this.list.scrollLeft / this.maxScroll : 0;
       this.thumb.style.width = `${width}px`;
       this.thumb.style.left = `${Math.round(progress * this.travel)}px`;
-      this.bar.style.visibility = this.maxScroll > 0 ? '' : 'hidden';
+
+      const scrollable = this.maxScroll > 0;
+      this.bar.style.visibility = scrollable ? '' : 'hidden';
+      if (scrollable) this.list.setAttribute('tabindex', '0');
+      else this.list.removeAttribute('tabindex');
     }
 
     scrollToThumb(left) {
