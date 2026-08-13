@@ -41,9 +41,7 @@ if (!customElements.get('product-slider')) {
       this.list.addEventListener('pointermove', this.onSlideMove);
       this.list.addEventListener('pointerup', this.onSlideUp);
       this.list.addEventListener('pointercancel', this.onSlideUp);
-      this.list.addEventListener('dragstart', (event) => {
-        if (this.dragged) event.preventDefault();
-      });
+      this.list.addEventListener('dragstart', (event) => event.preventDefault());
 
       if (document.fonts) document.fonts.ready.then(this.sync);
       this.sync();
